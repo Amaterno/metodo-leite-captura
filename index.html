@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia Gratuito: Fome, Conforto ou Dor | Nathalia Caldeira</title>
+  <meta name="description" content="Aprenda a diferença entre fome, conforto e dor no recém-nascido antes de encarar a primeira madrugada. Guia gratuito por Nathalia Caldeira.">
+
+  <!-- Open Graph para Meta Ads -->
+  <meta property="og:title" content="O choro do seu bebê não é aleatório.">
+  <meta property="og:description" content="Guia gratuito: a diferença real entre fome, conforto e dor no recém-nascido.">
+  <meta property="og:type" content="website">
+
+  <!-- =============================================
+  PIXEL DO FACEBOOK: cole o seu código aqui
+  ============================================= -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --coral:   #ed6d62;
+      --laranja: #f49c76;
+      --pessego: #fbc68c;
+      --amarelo: #ffe49f;
+      --agua:    #a7d3d7;
+      --cream:   #fdf8f4;
+      --dark:    #2a1f1a;
+      --muted:   #7a6259;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    /* ─── HERO ─────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(155deg, var(--coral) 0%, var(--laranja) 55%, var(--pessego) 100%);
+      padding: 48px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -50px; left: -50px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.22);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: white;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 8vw, 44px);
+      font-weight: 900;
+      color: white;
+      line-height: 1.12;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.65;
+      margin-bottom: 36px;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ─── BOOK MOCKUP ───────────────────────────────── */
+    .ebook-wrap {
+      margin: 0 auto 36px;
+      width: 150px;
+      perspective: 900px;
+      position: relative;
+      z-index: 1;
+    }
+    .ebook-cover {
+      width: 150px;
+      height: 200px;
+      background: linear-gradient(145deg, #2a1f1a 0%, #3e2820 60%, #4a3028 100%);
+      border-radius: 3px 10px 10px 3px;
+      box-shadow: -8px 8px 24px rgba(0,0,0,0.35), 2px 2px 0 rgba(255,255,255,0.07);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 18px 14px 22px;
+      position: relative;
+      overflow: hidden;
+      transform: rotateY(-8deg);
+      transition: transform 0.4s ease;
+    }
+    .ebook-cover:hover { transform: rotateY(0deg); }
+    .ebook-cover::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 8px; height: 100%;
+      background: rgba(0,0,0,0.28);
+    }
+    .ebook-cover::after {
+      content: '';
+      position: absolute;
+      inset: 10px;
+      border: 1px solid rgba(237,109,98,0.3);
+      border-radius: 6px;
+    }
+    .ebook-label {
+      font-size: 7.5px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--pessego);
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+    .ebook-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: white;
+      text-align: center;
+      line-height: 1.25;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
+    }
+    .ebook-divider {
+      width: 32px;
+      height: 1px;
+      background: rgba(237,109,98,0.5);
+      margin: 0 auto 8px;
+    }
+    .ebook-subtitle {
+      font-size: 8px;
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+      letter-spacing: 0.04em;
+      line-height: 1.5;
+      position: relative;
+      z-index: 1;
+    }
+    .ebook-author {
+      position: absolute;
+      bottom: 14px;
+      font-size: 7.5px;
+      color: var(--laranja);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      z-index: 1;
+    }
+
+    /* ─── FORM CARD ─────────────────────────────────── */
+    .form-card {
+      background: white;
+      border-radius: 18px;
+      padding: 28px 22px;
+      max-width: 440px;
+      margin: 0 auto;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.13);
+      position: relative;
+      z-index: 2;
+    }
+    .form-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--dark);
+      text-align: center;
+      margin-bottom: 4px;
+    }
+    .form-card-sub {
+      font-size: 13px;
+      color: var(--muted);
+      text-align: center;
+      margin-bottom: 22px;
+    }
+    .form-group { margin-bottom: 14px; }
+    .form-group label {
+      display: block;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 13px 15px;
+      border: 1.5px solid #e8e0d8;
+      border-radius: 10px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      color: var(--dark);
+      background: #fafaf8;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    }
+    .form-group input:focus {
+      border-color: var(--coral);
+      box-shadow: 0 0 0 3px rgba(237,109,98,0.1);
+      background: white;
+    }
+    .form-group input.error {
+      border-color: var(--coral);
+      background: #fff5f4;
+    }
+    .form-group input::placeholder { color: #c4bab4; }
+
+    .btn-submit {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, var(--coral) 0%, var(--laranja) 100%);
+      color: white;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      margin-top: 4px;
+      transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
+      box-shadow: 0 6px 18px rgba(237,109,98,0.4);
+      letter-spacing: 0.02em;
+    }
+    .btn-submit:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 22px rgba(237,109,98,0.5);
+    }
+    .btn-submit:active { transform: translateY(0); }
+    .btn-submit:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .privacy-note {
+      font-size: 11px;
+      color: #ccc;
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    /* ─── SUCCESS STATE ─────────────────────────────── */
+    .success-state { display: none; text-align: center; padding: 8px 0; }
+    .success-icon {
+      width: 60px; height: 60px;
+      background: linear-gradient(135deg, var(--agua), #7bbfc4);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 26px;
+      color: white;
+    }
+    .success-state h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    .success-state p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ─── PAIN SECTION ──────────────────────────────── */
+    .pain-section {
+      padding: 52px 24px;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+    .pain-section p {
+      font-size: 16px;
+      line-height: 1.82;
+      color: var(--dark);
+      margin-bottom: 18px;
+    }
+    .pain-section strong { color: var(--coral); }
+    .quote-box {
+      background: linear-gradient(135deg, #fff5f0, #fff9f5);
+      border-left: 4px solid var(--coral);
+      border-radius: 0 12px 12px 0;
+      padding: 18px 20px;
+      margin: 28px 0;
+      font-style: italic;
+      font-size: 15.5px;
+      line-height: 1.7;
+      color: #4a3530;
+    }
+
+    /* ─── LEARNINGS ─────────────────────────────────── */
+    .learnings {
+      background: white;
+      padding: 52px 24px;
+    }
+    .section-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 5.5vw, 32px);
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.22;
+      margin-bottom: 36px;
+    }
+    .learnings .section-header { max-width: 540px; margin: 0 auto 0; }
+
+    .learning-list {
+      list-style: none;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+    .learning-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 22px 0;
+      border-bottom: 1px solid #f2ece6;
+    }
+    .learning-item:last-child { border-bottom: none; }
+    .learning-num {
+      width: 38px; height: 38px; min-width: 38px;
+      background: linear-gradient(135deg, var(--coral), var(--laranja));
+      color: white;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700;
+      margin-top: 1px;
+      box-shadow: 0 4px 10px rgba(237,109,98,0.3);
+    }
+    .learning-text strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 5px;
+    }
+    .learning-text span {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ─── ABOUT ─────────────────────────────────────── */
+    .about {
+      padding: 52px 24px;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+    .about-inner {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      background: linear-gradient(135deg, #fff5f0, #fff9f5);
+      border-radius: 16px;
+      padding: 24px 20px;
+    }
+    .about-avatar {
+      width: 68px; height: 68px; min-width: 68px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--pessego), var(--laranja));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      color: white;
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(244,156,118,0.35);
+    }
+    .about-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 3px;
+    }
+    .about-cred {
+      font-size: 11.5px;
+      color: var(--coral);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 12px;
+    }
+    .about-text p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.72;
+    }
+
+    /* ─── CURSO CTA ──────────────────────────────────── */
+    .curso-cta {
+      background: linear-gradient(155deg, #2a1f1a 0%, #3c2620 100%);
+      padding: 56px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .curso-cta::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: rgba(237,109,98,0.07);
+    }
+    .curso-cta::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: -40px;
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: rgba(167,211,215,0.05);
+    }
+    .curso-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--pessego);
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .curso-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 6vw, 34px);
+      font-weight: 700;
+      color: white;
+      line-height: 1.18;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .curso-cta h2 em {
+      font-style: italic;
+      color: var(--pessego);
+    }
+    .curso-hook {
+      font-size: 14px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 340px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+    }
+    /* grade de pilares */
+    .pilares-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      max-width: 400px;
+      margin: 0 auto 28px;
+      position: relative;
+      z-index: 1;
+    }
+    .pilar-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 14px 12px;
+      text-align: left;
+    }
+    .pilar-letra {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--coral);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .pilar-nome {
+      font-size: 11px;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 3px;
+    }
+    .pilar-desc {
+      font-size: 10px;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.5;
+    }
+    /* card central (5º pilar) */
+    .pilar-center {
+      grid-column: span 2;
+      background: rgba(237,109,98,0.1);
+      border-color: rgba(237,109,98,0.25);
+    }
+    .pilar-center .pilar-nome { color: var(--pessego); }
+    /* preço */
+    .curso-price-block {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 20px 20px 16px;
+      max-width: 400px;
+      margin: 0 auto 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .curso-price-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 6px;
+    }
+    .curso-price-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      font-weight: 900;
+      color: white;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .curso-price-value sup {
+      font-size: 18px;
+      vertical-align: top;
+      margin-top: 7px;
+      display: inline-block;
+    }
+    .curso-price-sub {
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+    }
+    .curso-price-divider {
+      width: 100%;
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+      margin: 14px 0;
+    }
+    .curso-features {
+      list-style: none;
+      text-align: left;
+    }
+    .curso-features li {
+      font-size: 12px;
+      color: rgba(255,255,255,0.6);
+      padding: 3px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .curso-features li::before {
+      content: '✓';
+      color: var(--agua);
+      font-weight: 700;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+    /* botão */
+    .btn-curso {
+      display: block;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      background: linear-gradient(135deg, var(--coral), var(--laranja));
+      color: white;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(237,109,98,0.45);
+      letter-spacing: 0.02em;
+      position: relative;
+      z-index: 1;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .btn-curso:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(237,109,98,0.55);
+    }
+    .btn-curso span {
+      display: block;
+      font-size: 10px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.75);
+      margin-top: 3px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ─── MOCKUP CURSO ──────────────────────────────── */
+    .curso-mockup {
+      position: relative;
+      max-width: 320px;
+      margin: 0 auto 28px;
+      z-index: 1;
+    }
+    .mockup-screen {
+      background: #1a1210;
+      border-radius: 12px 12px 4px 4px;
+      border: 1.5px solid rgba(255,255,255,0.1);
+      overflow: hidden;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04);
+    }
+    .mockup-topbar {
+      background: #0f0c0a;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .mockup-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+    }
+    .mockup-dot:nth-child(1) { background: #ff6b6b; }
+    .mockup-dot:nth-child(2) { background: #ffd93d; }
+    .mockup-dot:nth-child(3) { background: #6bcb77; }
+    .mockup-url {
+      margin-left: 8px;
+      font-size: 10px;
+      color: rgba(255,255,255,0.25);
+      letter-spacing: 0.02em;
+    }
+    .mockup-player {
+      background: linear-gradient(135deg, #2a1f1a 0%, #1a0f0c 100%);
+      padding: 20px 16px 16px;
+      position: relative;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .mockup-play {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--coral), var(--laranja));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; color: white;
+      margin: 0 auto 12px;
+      box-shadow: 0 4px 14px rgba(237,109,98,0.45);
+      padding-left: 2px;
+    }
+    .mockup-progress {
+      height: 3px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 2px;
+      margin-bottom: 6px;
+      overflow: hidden;
+    }
+    .mockup-bar {
+      width: 38%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--coral), var(--laranja));
+      border-radius: 2px;
+    }
+    .mockup-aula-label {
+      font-size: 9.5px;
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+      letter-spacing: 0.03em;
+    }
+    .mockup-playlist {
+      padding: 8px 0 4px;
+    }
+    .mockup-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 14px;
+      font-size: 10.5px;
+      color: rgba(255,255,255,0.35);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .mockup-item:last-child { border-bottom: none; }
+    .mockup-done { color: rgba(255,255,255,0.45); }
+    .mockup-active {
+      background: rgba(237,109,98,0.1);
+      color: white;
+      border-left: 2px solid var(--coral);
+    }
+    .mockup-check { color: #6bcb77; font-size: 9px; width: 12px; }
+    .mockup-play-sm { color: var(--coral); font-size: 9px; width: 12px; }
+    .mockup-lock { color: rgba(255,255,255,0.2); font-size: 9px; width: 12px; }
+    .mockup-base {
+      height: 8px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 0 0 8px 8px;
+      margin-top: 2px;
+    }
+
+    /* ─── FOOTER ────────────────────────────────────── */
+    footer {
+      padding: 22px 24px;
+      text-align: center;
+      background: #1e1510;
+    }
+    footer p {
+      font-size: 11.5px;
+      color: rgba(255,255,255,0.25);
+      line-height: 1.7;
+    }
+
+    /* ─── ANIMATIONS ────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero .badge       { animation: fadeUp 0.5s ease both; }
+    .hero h1           { animation: fadeUp 0.5s 0.1s ease both; }
+    .hero .hero-sub    { animation: fadeUp 0.5s 0.2s ease both; }
+    .hero .ebook-wrap  { animation: fadeUp 0.5s 0.15s ease both; }
+    .hero .form-card   { animation: fadeUp 0.5s 0.3s ease both; }
+
+    @media (min-width: 600px) {
+      .hero { padding: 64px 32px 80px; }
+      .form-card { padding: 36px 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HERO ──────────────────────────────────────────── -->
+<section class="hero">
+
+  <div class="badge">✦ E-book gratuito · Método L.E.I.T.E.®</div>
+
+  <h1>O choro do seu bebê<br>não é <em>aleatório.</em></h1>
+
+  <p class="hero-sub">Você vai aprender a diferença entre fome, conforto e dor antes de encarar a primeira madrugada.</p>
+
+  <div class="ebook-wrap">
+    <div class="ebook-cover">
+      <div class="ebook-label">Guia Gratuito</div>
+      <div class="ebook-title">Fome, Conforto<br>ou Dor?</div>
+      <div class="ebook-divider"></div>
+      <div class="ebook-subtitle">Como ler os sinais<br>do recém-nascido</div>
+      <div class="ebook-author">Nathalia Caldeira · Método L.E.I.T.E.®</div>
+    </div>
+  </div>
+
+  <div class="form-card" id="form-hero">
+    <div class="form-inner">
+      <p class="form-card-title">Quero o guia gratuito</p>
+      <p class="form-card-sub">Acesso imediato. Sem spam.</p>
+
+      <div class="form-group">
+        <label>Seu nome</label>
+        <input type="text" id="name-hero" placeholder="Como prefere ser chamada?" autocomplete="given-name">
+      </div>
+      <div class="form-group">
+        <label>E-mail</label>
+        <input type="email" id="email-hero" placeholder="seu@email.com" autocomplete="email">
+      </div>
+      <div class="form-group">
+        <label>WhatsApp</label>
+        <input type="tel" id="whatsapp-hero" placeholder="(99) 99999-9999" autocomplete="tel">
+      </div>
+      <button class="btn-submit" onclick="handleSubmit('hero')">
+        Quero aprender a ler meu bebê →
+      </button>
+      <p class="privacy-note">🔒 Seus dados estão seguros. Não compartilhamos com ninguém.</p>
+    </div>
+
+    <div class="success-state" id="success-hero">
+      <div class="success-icon">✓</div>
+      <h4>Verifique o seu e-mail.</h4>
+      <p>O guia foi enviado para a sua caixa de entrada.<br>Se não aparecer em minutos, confira a pasta de spam.</p>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ── DOR ────────────────────────────────────────────── -->
+<section class="pain-section">
+
+  <p>Todo mundo te diz que o bebê vai chorar. Mas ninguém te explica o que fazer quando você está às 3 da manhã, com os seios doendo, o bebê no colo — e sem entender absolutamente nada do que ele quer.</p>
+
+  <div class="quote-box">
+    "Acabei de amamentar. Por que ele ainda está chorando? Meu leite não sustentou?"
+  </div>
+
+  <p>Essa pergunta destroça a confiança de muitas mães logo na primeira semana. <strong>Não porque o leite seja fraco.</strong> Mas porque ninguém ensinou a diferença entre o choro de fome, o choro de desconforto e o choro de dor.</p>
+
+  <p>São três sinais completamente diferentes. Com respostas completamente diferentes. E você vai precisar dessa leitura na prática — não no meio do caos, mas antes.</p>
+
+</section>
+
+
+<!-- ── O QUE VOCÊ VAI APRENDER ───────────────────────── -->
+<section class="learnings">
+  <div class="section-header">
+    <div class="section-tag">O que tem neste guia</div>
+    <p class="section-title">4 coisas que vão mudar<br>a sua madrugada</p>
+  </div>
+
+  <ul class="learning-list">
+    <li class="learning-item">
+      <div class="learning-num">1</div>
+      <div class="learning-text">
+        <strong>Os 3 tipos de choro e o que cada um pede</strong>
+        <span>Fome, conforto ou dor — os sinais são diferentes e as respostas também. Você vai reconhecer os padrões antes de entrar em pânico.</span>
+      </div>
+    </li>
+    <li class="learning-item">
+      <div class="learning-num">2</div>
+      <div class="learning-text">
+        <strong>Por que o relógio não é o critério certo</strong>
+        <span>A regra das "3 em 3 horas" não foi feita para recém-nascidos. Entenda como funciona a fome real do bebê.</span>
+      </div>
+    </li>
+    <li class="learning-item">
+      <div class="learning-num">3</div>
+      <div class="learning-text">
+        <strong>Sucção nutritiva vs. sucção de conforto</strong>
+        <span>Ele está mamando de verdade ou só usando o peito de chupeta? Os sinais visuais e sonoros que provam a diferença.</span>
+      </div>
+    </li>
+    <li class="learning-item">
+      <div class="learning-num">4</div>
+      <div class="learning-text">
+        <strong>Os sinais de alerta que pedem ação imediata</strong>
+        <span>Quando o choro sai do padrão e algo realmente está errado — o que observar e quando buscar ajuda profissional.</span>
+      </div>
+    </li>
+  </ul>
+</section>
+
+
+<!-- ── SOBRE ──────────────────────────────────────────── -->
+<section class="about">
+  <div class="about-inner">
+    <div class="about-avatar">N</div>
+    <div class="about-text">
+      <h3>Nathalia Caldeira</h3>
+      <div class="about-cred">Enfermeira · 14 anos · Materno-infantil</div>
+      <p>Mãe de 3 com três histórias de amamentação completamente diferentes. Consultora de amamentação que prefere a realidade da madrugada à teoria dos livros. Aqui não tem romantização — tem ferramenta.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── CURSO CTA ───────────────────────────────────────── -->
+<section class="curso-cta">
+
+  <div class="curso-tag">✦ Próximo passo</div>
+
+  <h2>O guia te ensinou<br>a ler o choro.<br>O curso te dá o <em>resto.</em></h2>
+
+  <p class="curso-hook">Peito empedrado. Bebê que não pega. Produção caindo. Madrugada sem dormir. Para cada um desses cenários existe uma ferramenta — e você vai saber qual usar.</p>
+
+  <div class="pilares-grid">
+    <div class="pilar-card">
+      <div class="pilar-letra">L</div>
+      <div class="pilar-nome">Leitura do bebê</div>
+      <div class="pilar-desc">Choro, saltos, sinais de fome real</div>
+    </div>
+    <div class="pilar-card">
+      <div class="pilar-letra">E</div>
+      <div class="pilar-nome">Engrenagem do leite</div>
+      <div class="pilar-desc">Fisiologia real da produção láctea</div>
+    </div>
+    <div class="pilar-card">
+      <div class="pilar-letra">I</div>
+      <div class="pilar-nome">Intervenção em crises</div>
+      <div class="pilar-desc">O que fazer quando o caos se instala</div>
+    </div>
+    <div class="pilar-card">
+      <div class="pilar-letra">T</div>
+      <div class="pilar-nome">Técnica de pega</div>
+      <div class="pilar-desc">Biomecânica real, sem dor</div>
+    </div>
+    <div class="pilar-card pilar-center">
+      <div class="pilar-letra">E</div>
+      <div class="pilar-nome">Equilíbrio e saúde mental</div>
+      <div class="pilar-desc">Puerpério, expectativa x realidade e identidade da nova mulher</div>
+    </div>
+  </div>
+
+  <!-- mockup curso online -->
+  <div class="curso-mockup" aria-hidden="true">
+    <div class="mockup-screen">
+      <div class="mockup-topbar">
+        <div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div>
+        <div class="mockup-url">metodoleite.com.br</div>
+      </div>
+      <div class="mockup-player">
+        <div class="mockup-play">▶</div>
+        <div class="mockup-progress">
+          <div class="mockup-bar"></div>
+        </div>
+        <div class="mockup-aula-label">Aula 4 · O Quarto Trimestre</div>
+      </div>
+      <div class="mockup-playlist">
+        <div class="mockup-item mockup-done"><span class="mockup-check">✓</span><span>Boas-vindas</span></div>
+        <div class="mockup-item mockup-done"><span class="mockup-check">✓</span><span>Peito Regulador</span></div>
+        <div class="mockup-item mockup-done"><span class="mockup-check">✓</span><span>Golden Hour</span></div>
+        <div class="mockup-item mockup-active"><span class="mockup-play-sm">▶</span><span>O Quarto Trimestre</span></div>
+        <div class="mockup-item"><span class="mockup-lock">○</span><span>Decodificando Sinais</span></div>
+        <div class="mockup-item"><span class="mockup-lock">○</span><span>A Fábrica do Leite</span></div>
+      </div>
+    </div>
+    <div class="mockup-base"></div>
+  </div>
+
+  <div class="curso-price-block">
+    <div class="curso-price-label">Acesso vitalício · 12 aulas</div>
+    <div class="curso-price-value"><sup>R$</sup> 94</div>
+    <div class="curso-price-sub">pagamento único · sem assinatura</div>
+    <div class="curso-price-divider"></div>
+    <ul class="curso-features">
+      <li>Acesso imediato após a compra</li>
+      <li>Suporte via comentários nas aulas</li>
+      <li>Conteúdo disponível 24h — inclusive na madrugada</li>
+      <li>Sem enrolação. Informação clínica real.</li>
+    </ul>
+  </div>
+
+  <a href="https://pay.kiwify.com.br/pRTtl4b" target="_blank" class="btn-curso">
+    Quero o Método L.E.I.T.E.® completo
+    <span>Você vai para a página segura de pagamento</span>
+  </a>
+
+</section>
+
+
+<!-- ── FOOTER ─────────────────────────────────────────── -->
+<footer>
+  <p>© 2025 Nathalia Caldeira · Método L.E.I.T.E.® · Todos os direitos reservados</p>
+</footer>
+
+
+<script>
+  /* ── Máscara WhatsApp ─────────────────────────────── */
+  document.querySelectorAll('input[type="tel"]').forEach(el => {
+    el.addEventListener('input', function () {
+      let v = this.value.replace(/\D/g, '').slice(0, 11);
+      if      (v.length > 10) v = v.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+      else if (v.length > 6)  v = v.replace(/^(\d{2})(\d{4,5})(\d{0,4})$/, '($1) $2-$3');
+      else if (v.length > 2)  v = v.replace(/^(\d{2})(\d+)$/, '($1) $2');
+      else if (v.length > 0)  v = '(' + v;
+      this.value = v;
+    });
+  });
+
+  /* ── Envio do formulário ──────────────────────────── */
+  function handleSubmit(formId) {
+    const name     = document.getElementById('name-'     + formId).value.trim();
+    const email    = document.getElementById('email-'    + formId).value.trim();
+    const whatsapp = document.getElementById('whatsapp-' + formId).value.trim();
+
+    const emailInput = document.getElementById('email-' + formId);
+    if (!email || !email.includes('@') || !email.includes('.')) {
+      emailInput.classList.add('error');
+      emailInput.focus();
+      emailInput.addEventListener('input', () => emailInput.classList.remove('error'), { once: true });
+      return;
+    }
+
+    const btn = document.querySelector('#form-' + formId + ' .btn-submit');
+    btn.textContent = 'Enviando...';
+    btn.disabled = true;
+
+    /* =====================================================
+       INTEGRAÇÃO KIWIFY
+       ─────────────────────────────────────────────────────
+       Substitua o setTimeout abaixo pela chamada real.
+       Opção 1 — Webhook Kiwify:
+         fetch('SEU_WEBHOOK_KIWIFY', {
+           method: 'POST',
+           headers: { 'Content-Type': 'application/json' },
+           body: JSON.stringify({ name, email, phone: whatsapp })
+         }).then(() => showSuccess(formId));
+
+       Opção 2 — Embed nativo da Kiwify:
+         Substitua todo o bloco .form-card pelo
+         código embed gerado na aba "Capturas" da Kiwify.
+    ===================================================== */
+
+    setTimeout(() => showSuccess(formId), 1200);
+  }
+
+  function showSuccess(formId) {
+    const card = document.getElementById('form-' + formId);
+    card.querySelector('.form-inner').style.display  = 'none';
+    document.getElementById('success-' + formId).style.display = 'block';
+
+    /* Pixel — dispara evento Lead quando o formulário é enviado */
+    if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+  }
+</script>
+
+</body>
+</html>
