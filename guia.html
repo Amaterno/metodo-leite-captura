@@ -1,0 +1,962 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Fome, Conforto ou Dor? · Guia do Método L.E.I.T.E.®</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;0,900;1,500;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --coral:#ed6d62;
+    --laranja:#f49c76;
+    --pessego:#fbc68c;
+    --amarelo:#ffe49f;
+    --agua:#a7d3d7;
+    --cream:#fdf8f4;
+    --dark:#2a1f1a;
+    --muted:#7a6259;
+    --paper:#ffffff;
+
+    --serif:"Playfair Display", "Times New Roman", serif;
+    --sans:"DM Sans", system-ui, -apple-system, sans-serif;
+
+    --pad: 32px;
+    --pad-lg: 36px;
+    --maxw: 600px;
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  html{
+    background:#1b1411;
+    -webkit-text-size-adjust:100%;
+  }
+  body{
+    font-family:var(--sans);
+    color:var(--dark);
+    font-size:16px;
+    line-height:1.75;
+    background:#1b1411;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  /* ──────────────── PAGE WRAPPER ──────────────── */
+  .book{
+    max-width:var(--maxw);
+    margin:0 auto;
+    background:var(--cream);
+    box-shadow: 0 0 80px rgba(0,0,0,.35);
+  }
+
+  .page{
+    position:relative;
+    padding: 64px var(--pad) 56px;
+    overflow:hidden;
+  }
+  .page + .page{border-top:1px solid rgba(122,98,89,.08)}
+
+  .page.dark{background:var(--dark);color:#f4ece4}
+  .page.cream{background:var(--cream)}
+  .page.paper{background:var(--paper)}
+
+  /* watermark on content pages */
+  .page.paper::before,
+  .page.cream::before{
+    content:"Método L.E.I.T.E.®  ·  Método L.E.I.T.E.®  ·  Método L.E.I.T.E.®";
+    position:absolute;
+    top:50%; left:50%;
+    transform:translate(-50%,-50%) rotate(-28deg);
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:54px;
+    letter-spacing:.02em;
+    color:var(--dark);
+    opacity:.035;
+    white-space:nowrap;
+    pointer-events:none;
+    user-select:none;
+    z-index:0;
+  }
+
+  .page > *{position:relative;z-index:1}
+
+  /* ──────────────── SHARED TYPE ──────────────── */
+  .eyebrow{
+    font-family:var(--sans);
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+  .eyebrow .dot{
+    display:inline-block;width:4px;height:4px;border-radius:50%;
+    background:var(--coral);vertical-align:middle;margin:0 8px 2px;
+  }
+
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:700;color:var(--dark);margin:0;letter-spacing:-.01em}
+
+  p{margin:0 0 1.1em;color:#3a2c25}
+  .page.dark p{color:#d9cdc3}
+
+  .lead{font-size:16.5px;line-height:1.78}
+
+  .rule{
+    width:48px;height:2px;border:0;background:var(--coral);margin:24px 0;
+  }
+  .rule.center{margin-left:auto;margin-right:auto}
+  .rule.long{width:100%;height:1px;background:rgba(122,98,89,.18)}
+
+  /* page footer */
+  .pgfoot{
+    margin-top:48px;
+    padding-top:18px;
+    border-top:1px solid rgba(122,98,89,.18);
+    display:flex;align-items:center;justify-content:space-between;
+    font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--muted);
+    font-weight:500;
+  }
+  .pgfoot .num{font-family:var(--serif);font-style:italic;letter-spacing:.04em;text-transform:none;font-size:13px}
+  .page.dark .pgfoot{border-color:rgba(255,255,255,.12);color:#a89a8e}
+
+  /* ════════════════════════════════════════════════
+     PÁGINA 1 — CAPA (LIGHT / EDITORIAL)
+     ════════════════════════════════════════════════ */
+  .cover{
+    background:
+      radial-gradient(80% 55% at 92% -8%,  rgba(237,109,98,.20),  transparent 50%),
+      radial-gradient(60% 45% at -5% 108%, rgba(255,228,159,.22), transparent 52%),
+      linear-gradient(155deg, #7ec3ca 0%, #a7d3d7 52%, #8ccbd0 100%);
+    color:var(--dark);
+    padding:80px var(--pad) 56px;
+    min-height: 100vh;
+    display:flex;flex-direction:column;
+    position:relative;
+    overflow:hidden;
+  }
+  /* very subtle paper texture */
+  .cover::after{
+    content:"";position:absolute;inset:0;
+    background:
+      repeating-linear-gradient(0deg, rgba(42,31,26,.012) 0 1px, transparent 1px 3px);
+    pointer-events:none;
+  }
+  /* flowing curves */
+  .cover .curves{
+    position:absolute;top:-10px;right:-60px;width:360px;height:360px;
+    pointer-events:none;opacity:.85;
+  }
+
+  .cover-badge{
+    font-family:var(--sans);
+    font-size:10.5px;
+    font-weight:700;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    color:var(--coral);
+    display:inline-flex;align-items:center;gap:10px;
+    padding:9px 14px;
+    border:1px solid rgba(237,109,98,.40);
+    border-radius:999px;
+    align-self:flex-start;
+    background:rgba(255,255,255,.50);
+    backdrop-filter:blur(4px);
+  }
+  .cover-badge::before{
+    content:"";width:5px;height:5px;border-radius:50%;background:var(--coral);
+    box-shadow:0 0 0 3px rgba(237,109,98,.22);
+  }
+
+  .cover h1{
+    font-family:var(--serif);
+    font-weight:800;
+    font-size: clamp(46px, 13vw, 78px);
+    line-height:.98;
+    letter-spacing:-.025em;
+    color:var(--dark);
+    margin: 36px 0 22px;
+  }
+  .cover h1 em{
+    font-style:italic;
+    font-weight:500;
+    color:var(--coral);
+  }
+  .cover h1 .qm{
+    color:var(--laranja);
+    font-style:italic;
+    font-weight:500;
+  }
+
+  .cover .sub{
+    font-family:var(--serif);
+    font-style:italic;
+    font-weight:500;
+    font-size:19px;
+    line-height:1.45;
+    color:#2e5258;
+    max-width:32ch;
+    margin:0 0 28px;
+  }
+
+  .cover .coral-line{
+    width:64px;height:2px;background:var(--coral);margin:0 0 22px;
+  }
+
+  .author{
+    display:flex;flex-direction:column;gap:4px;
+    margin-bottom:auto;
+  }
+  .author .name{
+    font-family:var(--serif);font-weight:700;font-size:22px;color:var(--dark);
+    letter-spacing:-.01em;
+  }
+  .author .credential{
+    font-family:var(--sans);
+    font-size:12.5px;letter-spacing:.04em;
+    color:#2e6068;
+    font-weight:600;
+  }
+  .author .credential .sep{color:rgba(46,96,104,.30);margin:0 8px}
+
+  /* mini TOC at bottom of cover */
+  .toc{
+    margin-top:48px;
+    padding-top:22px;
+    border-top:1px solid rgba(42,31,26,.15);
+    display:flex;flex-direction:column;gap:14px;
+  }
+  .toc-label{
+    font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--muted);font-weight:700;margin-bottom:4px;
+  }
+  .toc-item{
+    display:flex;align-items:center;gap:14px;
+    color:var(--dark);font-size:14.5px;
+  }
+  .toc-item .ico{
+    width:36px;height:36px;flex:none;
+    display:grid;place-items:center;
+    border:1px solid rgba(255,255,255,.60);
+    background:rgba(255,255,255,.45);
+    border-radius:50%;
+    color:var(--coral);
+  }
+  .toc-item .num{
+    font-family:var(--serif);font-style:italic;color:var(--coral);
+    font-size:13px;width:22px;
+  }
+  .toc-item .ttl{font-family:var(--serif);font-weight:600;font-size:15.5px;color:var(--dark)}
+  .toc-item .ttl small{
+    display:block;font-family:var(--sans);font-style:normal;font-size:11.5px;
+    color:var(--muted);letter-spacing:.02em;font-weight:400;margin-top:2px;
+  }
+
+  /* ════════════════════════════════════════════════
+     PÁGINA 2 — INTRODUÇÃO
+     ════════════════════════════════════════════════ */
+  .intro .eyebrow{margin-bottom:18px}
+  .pullquote{
+    position:relative;
+    font-family:var(--serif);
+    font-style:italic;
+    font-weight:500;
+    font-size:22px;
+    line-height:1.4;
+    color:var(--dark);
+    padding: 6px 0 6px 22px;
+    border-left:3px solid var(--coral);
+    margin: 8px 0 32px;
+    letter-spacing:-.005em;
+  }
+  .pullquote::before{
+    content:"\201C";
+    position:absolute;left:18px;top:-30px;
+    font-family:var(--serif);font-size:78px;color:var(--coral);opacity:.18;
+    line-height:1;
+  }
+
+  .intro p{font-size:16px}
+  .intro strong.hl{
+    color:var(--dark);
+    background:linear-gradient(transparent 62%, rgba(237,109,98,.22) 62%);
+    padding:0 2px;
+    font-weight:600;
+  }
+
+  .three-cry{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin: 36px 0 8px;
+  }
+  .cry{
+    display:flex;flex-direction:column;align-items:center;
+    gap:10px;
+    padding:18px 8px;
+    background:#fff;
+    border:1px solid rgba(122,98,89,.10);
+    border-radius:14px;
+    text-align:center;
+  }
+  .cry .glyph{
+    width:42px;height:42px;border-radius:50%;
+    display:grid;place-items:center;
+    background:var(--cream);
+    color:var(--coral);
+  }
+  .cry.b .glyph{background:#fef0e3;color:var(--laranja)}
+  .cry.c .glyph{background:#eaf3f4;color:#6fa6ab}
+  .cry .lbl{
+    font-family:var(--sans);font-size:11px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);font-weight:600;
+  }
+  .cry .ttl{
+    font-family:var(--serif);font-size:15px;color:var(--dark);font-weight:700;
+    line-height:1.2;
+  }
+
+  /* ════════════════════════════════════════════════
+     CHAPTER CARDS (P3 / P4 / P5)
+     ════════════════════════════════════════════════ */
+  .chapter{
+    position:relative;
+    background:#fff;
+    border-radius:18px;
+    padding: 44px 28px 32px;
+    box-shadow:
+      0 1px 0 rgba(122,98,89,.06),
+      0 30px 60px -32px rgba(42,31,26,.18),
+      0 8px 20px -12px rgba(42,31,26,.08);
+    overflow:hidden;
+    border:1px solid rgba(122,98,89,.06);
+  }
+  .chapter::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:4px;
+    background:var(--coral);
+  }
+  .chapter.laranja::before{background:var(--laranja)}
+  .chapter.agua::before{background:var(--agua)}
+
+  .ch-bgnum{
+    position:absolute;
+    top:-22px;right:-12px;
+    font-family:var(--serif);
+    font-weight:900;
+    font-size:240px;
+    line-height:1;
+    color:var(--coral);
+    opacity:.10;
+    letter-spacing:-.04em;
+    pointer-events:none;
+    user-select:none;
+  }
+  .chapter.laranja .ch-bgnum{color:var(--laranja);opacity:.12}
+  .chapter.agua .ch-bgnum{color:#6fa6ab;opacity:.14}
+
+  .ch-tag{
+    font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--muted);font-weight:600;
+    display:inline-flex;align-items:center;gap:10px;
+  }
+  .ch-tag::before{
+    content:"";width:18px;height:1px;background:var(--coral);
+  }
+  .chapter.laranja .ch-tag::before{background:var(--laranja)}
+  .chapter.agua .ch-tag::before{background:#6fa6ab}
+
+  .ch-title{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size: 34px;
+    line-height:1.05;
+    letter-spacing:-.02em;
+    margin: 14px 0 6px;
+    color:var(--dark);
+  }
+  .ch-sub{
+    font-family:var(--serif);
+    font-style:italic;
+    font-weight:500;
+    font-size:17px;
+    color:var(--muted);
+    margin: 0 0 24px;
+  }
+
+  /* clinical diagnosis list */
+  .diag{
+    list-style:none;margin:0 0 26px;padding:0;
+    display:flex;flex-direction:column;gap:14px;
+  }
+  .diag li{
+    position:relative;
+    padding: 2px 0 2px 24px;
+    font-size:15.5px;
+    line-height:1.6;
+    color:#3a2c25;
+  }
+  .diag li::before{
+    content:"";
+    position:absolute;left:0;top:11px;
+    width:8px;height:8px;border-radius:50%;
+    background:var(--coral);
+    box-shadow:0 0 0 4px rgba(237,109,98,.14);
+  }
+  .chapter.laranja .diag li::before{background:var(--laranja);box-shadow:0 0 0 4px rgba(244,156,118,.18)}
+  .chapter.agua .diag li::before{background:#6fa6ab;box-shadow:0 0 0 4px rgba(167,211,215,.30)}
+  .diag li b{color:var(--dark);font-weight:600}
+
+  .chapter p{font-size:15.5px;line-height:1.72}
+
+  /* attention box (yellow) */
+  .attn{
+    display:flex;gap:14px;align-items:flex-start;
+    background:var(--amarelo);
+    border-radius:12px;
+    padding:16px 18px;
+    margin:8px 0 4px;
+    font-size:14.5px;line-height:1.6;
+    color:#4a3a1a;
+  }
+  .attn .ico{
+    flex:none;width:28px;height:28px;border-radius:50%;
+    background:#f5c84d;color:#3a2c0a;
+    display:grid;place-items:center;font-weight:700;font-size:14px;
+    font-family:var(--sans);
+  }
+  .attn b{color:#2a1f1a;font-weight:700}
+
+  /* suction comparison cards (chapter 2) */
+  .compare{
+    display:grid;grid-template-columns:1fr 1fr;gap:12px;
+    margin:18px 0 22px;
+  }
+  .cmp{
+    border-radius:14px;
+    padding:18px 16px;
+    font-size:13.5px;line-height:1.55;
+  }
+  .cmp.a{background:#dfeced;color:#2c4548}
+  .cmp.b{background:var(--pessego);color:#4a2f17}
+  .cmp .tag{
+    font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+    font-weight:700;opacity:.75;margin-bottom:6px;display:block;
+  }
+  .cmp .ttl{
+    font-family:var(--serif);font-weight:700;font-size:16px;line-height:1.15;
+    margin-bottom:10px;
+  }
+  .cmp .pattern{
+    font-family:var(--sans);font-size:12.5px;line-height:1.55;
+  }
+  .cmp .pattern b{font-weight:700}
+
+  .relief{
+    font-family:var(--serif);
+    font-style:italic;
+    font-weight:500;
+    font-size:17px;
+    line-height:1.5;
+    color:var(--dark);
+    text-align:center;
+    padding: 18px 8px 4px;
+    border-top:1px solid rgba(122,98,89,.14);
+  }
+
+  /* pain signs cards (chapter 3) */
+  .signs{
+    display:flex;flex-direction:column;gap:10px;
+    margin: 4px 0 22px;
+  }
+  .sign{
+    display:flex;align-items:flex-start;gap:14px;
+    background:#fbf2ef;
+    border:1px solid rgba(237,109,98,.16);
+    border-radius:12px;
+    padding:14px 16px;
+    font-size:14.5px;line-height:1.5;
+    color:#3a2c25;
+  }
+  .sign .dotr{
+    flex:none;width:10px;height:10px;border-radius:50%;
+    background:#d94434;margin-top:7px;
+    box-shadow:0 0 0 4px rgba(217,68,52,.16);
+  }
+
+  /* dyschezia box (dashed) */
+  .note{
+    border:1.5px dashed rgba(237,109,98,.55);
+    background:#fff;
+    border-radius:14px;
+    padding:18px 18px 14px;
+    margin: 10px 0 18px;
+    position:relative;
+  }
+  .note .tag{
+    position:absolute;top:-10px;left:14px;
+    background:var(--cream);
+    padding:2px 10px;
+    font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--coral);font-weight:700;
+    border-radius:999px;
+  }
+  .note .ttl{
+    font-family:var(--serif);font-weight:700;font-size:17px;color:var(--dark);
+    margin: 4px 0 8px;
+  }
+  .note p{font-size:14.5px;line-height:1.6;margin:0}
+
+  /* red alert line */
+  .alert{
+    display:flex;gap:12px;align-items:flex-start;
+    background:#2a1f1a;
+    color:#fbe6e3;
+    border-radius:12px;
+    padding:14px 16px;
+    font-size:13.5px;line-height:1.55;
+    margin:0;
+  }
+  .alert .bar{
+    flex:none;width:3px;align-self:stretch;background:var(--coral);border-radius:2px;
+  }
+  .alert b{color:#fff}
+
+  /* ════════════════════════════════════════════════
+     PÁGINA 6 — ENCERRAMENTO + CTA
+     ════════════════════════════════════════════════ */
+  .closing{
+    background:var(--dark);
+    color:#f4ece4;
+    padding: 0 var(--pad) 56px;
+    position:relative;
+    overflow:hidden;
+  }
+  .closing-top-fade{
+    height:80px;
+    background:linear-gradient(to bottom, var(--cream), var(--dark));
+  }
+  .closing-inner{padding-top:32px}
+
+  .closing .eyebrow{color:var(--pessego)}
+  .closing .eyebrow .dot{background:var(--coral)}
+
+  .closing h2{
+    font-family:var(--serif);
+    font-weight:800;
+    font-size: clamp(40px, 11vw, 60px);
+    line-height:1.0;
+    letter-spacing:-.025em;
+    color:#fff;
+    margin: 24px 0 24px;
+  }
+  .closing h2 em{font-style:italic;color:var(--pessego);font-weight:500}
+
+  .closing .bridge{
+    font-size:15.5px;line-height:1.72;color:#d9cdc3;max-width:50ch;
+  }
+  .closing .bridge strong{color:#fff;font-weight:600}
+
+  /* L · E · I · T · E grid */
+  .pillars{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:10px;
+    margin: 28px 0 32px;
+  }
+  .pillar{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:12px;
+    padding:16px 14px 14px;
+  }
+  .pillar.full{grid-column:1/-1}
+  .pillar .ltr{
+    font-family:var(--serif);font-weight:800;font-size:36px;color:var(--coral);
+    line-height:1;letter-spacing:-.02em;
+  }
+  .pillar .nm{
+    font-family:var(--serif);font-weight:700;font-size:15px;color:#fff;
+    margin:6px 0 2px;
+  }
+  .pillar .desc{
+    font-size:12.5px;line-height:1.45;color:#b5a89c;
+  }
+
+  /* price block */
+  .price{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:14px;
+    padding:18px 20px;
+    display:flex;flex-direction:column;gap:4px;
+    margin-bottom: 18px;
+  }
+  .price .meta{
+    font-size:11px;letter-spacing:.24em;text-transform:uppercase;
+    color:#a89a8e;font-weight:600;
+  }
+  .price .row{
+    display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;
+  }
+  .price .val{
+    font-family:var(--serif);font-weight:800;font-size:38px;color:#fff;
+    letter-spacing:-.02em;line-height:1;
+  }
+  .price .feats{
+    display:flex;gap:14px;color:#d9cdc3;font-size:13px;
+  }
+  .price .feats span{display:inline-flex;align-items:center;gap:6px}
+  .price .feats em{font-style:normal;color:var(--agua);font-weight:600}
+
+  /* CTA button */
+  .cta{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    background:linear-gradient(135deg, var(--coral) 0%, var(--laranja) 100%);
+    color:#fff;
+    text-decoration:none;
+    padding: 20px 22px;
+    border-radius:16px;
+    font-family:var(--sans);font-weight:700;font-size:16px;
+    letter-spacing:.01em;
+    box-shadow:
+      0 14px 30px -10px rgba(237,109,98,.55),
+      0 4px 10px -4px rgba(237,109,98,.4),
+      inset 0 1px 0 rgba(255,255,255,.20);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .cta:hover{transform:translateY(-1px)}
+  .cta .arrow{
+    width:30px;height:30px;border-radius:50%;
+    background:rgba(255,255,255,.22);
+    display:grid;place-items:center;flex:none;
+    transition:transform .2s ease;
+  }
+  .cta:hover .arrow{transform:translateX(3px)}
+
+  .guarantee{
+    margin-top:14px;
+    font-size:12px;color:#a89a8e;text-align:center;letter-spacing:.02em;
+  }
+
+  .signoff{
+    margin-top:40px;padding-top:24px;
+    border-top:1px solid rgba(255,255,255,.10);
+    display:flex;flex-direction:column;gap:4px;
+  }
+  .signoff .sig{
+    font-family:"Playfair Display",serif;font-style:italic;font-weight:500;
+    font-size:22px;color:#fff;
+  }
+  .signoff .who{
+    font-size:12.5px;color:#a89a8e;letter-spacing:.02em;line-height:1.5;
+  }
+  .signoff .who b{color:#e6d8cc;font-weight:600}
+
+  /* responsive tweaks */
+  @media (max-width: 360px){
+    .page{padding:56px 24px 48px}
+    .cover{padding:64px 24px 48px}
+    .closing{padding: 0 24px 48px}
+    .cover h1{font-size:46px}
+    .ch-title{font-size:30px}
+    .pillars{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<main class="book">
+
+  <!-- ════════════════ PÁGINA 1 — CAPA ════════════════ -->
+  <section class="page cover" aria-label="Capa">
+    <!-- decorative flowing curves -->
+    <svg class="curves" viewBox="0 0 340 340" fill="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#ed6d62" stop-opacity=".95"/>
+          <stop offset="1" stop-color="#f49c76" stop-opacity=".25"/>
+        </linearGradient>
+        <linearGradient id="g2" x1="1" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#f49c76" stop-opacity=".85"/>
+          <stop offset="1" stop-color="#fbc68c" stop-opacity=".15"/>
+        </linearGradient>
+        <linearGradient id="g3" x1="0" y1="1" x2="1" y2="0">
+          <stop offset="0" stop-color="#a7d3d7" stop-opacity=".7"/>
+          <stop offset="1" stop-color="#a7d3d7" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path d="M -10 60 C 90 20, 180 120, 350 40" stroke="url(#g1)" stroke-width="1.8" fill="none"/>
+      <path d="M -10 90 C 110 50, 200 160, 360 80" stroke="url(#g1)" stroke-width="1.4" fill="none" opacity=".85"/>
+      <path d="M -10 130 C 100 100, 220 220, 360 140" stroke="url(#g2)" stroke-width="1.2" fill="none"/>
+      <path d="M -10 180 C 120 160, 230 280, 360 210" stroke="url(#g2)" stroke-width="1" fill="none" opacity=".75"/>
+      <path d="M -10 240 C 130 230, 240 320, 360 280" stroke="url(#g3)" stroke-width="1" fill="none" opacity=".7"/>
+    </svg>
+
+    <span class="cover-badge">Guia Gratuito · Método L.E.I.T.E.®</span>
+
+    <h1>
+      Fome,<br/>
+      <em>Conforto</em><br/>
+      ou Dor<span class="qm">?</span>
+    </h1>
+
+    <p class="sub">Como ler os sinais do seu recém-nascido antes da primeira madrugada.</p>
+
+    <div class="coral-line"></div>
+
+    <div class="author">
+      <span class="name">Nathalia Caldeira</span>
+      <span class="credential">Enfermeira <span class="sep">·</span> Consultora de Amamentação</span>
+    </div>
+
+    <!-- mini visual TOC -->
+    <nav class="toc" aria-label="Índice">
+      <span class="toc-label">Nesta leitura</span>
+
+      <div class="toc-item">
+        <span class="ico" aria-hidden="true">
+          <!-- moon -->
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+        </span>
+        <span class="num">01</span>
+        <span class="ttl">O Choro de Fome<small>Quando o estômago fala mais alto</small></span>
+      </div>
+
+      <div class="toc-item">
+        <span class="ico" aria-hidden="true">
+          <!-- baby -->
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M9 9h.01M15 9h.01M9.5 12c.8.6 1.6.9 2.5.9s1.7-.3 2.5-.9"/><path d="M5 21c1-4 4-6 7-6s6 2 7 6"/></svg>
+        </span>
+        <span class="num">02</span>
+        <span class="ttl">O Choro de Conforto<small>Quando ele quer você, não leite</small></span>
+      </div>
+
+      <div class="toc-item">
+        <span class="ico" aria-hidden="true">
+          <!-- heart pulse -->
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 6.6a5.4 5.4 0 0 0-9-2 5.4 5.4 0 0 0-9 2c0 6.4 9 11.6 9 11.6s9-5.2 9-11.6Z"/><path d="M3 13h4l2-3 3 6 2-3h7"/></svg>
+        </span>
+        <span class="num">03</span>
+        <span class="ttl">O Choro de Dor<small>Quando algo precisa de atenção</small></span>
+      </div>
+    </nav>
+  </section>
+
+  <!-- ════════════════ PÁGINA 2 — INTRODUÇÃO ════════════════ -->
+  <section class="page cream intro" aria-label="Introdução">
+    <span class="eyebrow">Introdução<span class="dot"></span>A pergunta da primeira semana</span>
+
+    <blockquote class="pullquote">
+      Acabei de amamentar. Por que ele ainda está chorando? Meu leite não sustentou?
+    </blockquote>
+
+    <p>Essa pergunta destrói a confiança de muitas mães logo na primeira semana. Não porque o leite seja fraco. Mas porque ninguém ensinou a diferença entre <strong class="hl">fome, conforto e dor</strong>.</p>
+
+    <p>São três sinais completamente diferentes. Com respostas completamente diferentes. E você vai precisar dessa leitura <em>antes</em> — não no meio do caos às 3 da manhã.</p>
+
+    <div class="three-cry" aria-label="Os três tipos de choro">
+      <div class="cry a">
+        <span class="glyph" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+        </span>
+        <span class="lbl">01</span>
+        <span class="ttl">Fome</span>
+      </div>
+      <div class="cry b">
+        <span class="glyph" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="4.5"/><path d="M5 21c1-4 4-6 7-6s6 2 7 6"/></svg>
+        </span>
+        <span class="lbl">02</span>
+        <span class="ttl">Conforto</span>
+      </div>
+      <div class="cry c">
+        <span class="glyph" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 6.6a5.4 5.4 0 0 0-9-2 5.4 5.4 0 0 0-9 2c0 6.4 9 11.6 9 11.6s9-5.2 9-11.6Z"/></svg>
+        </span>
+        <span class="lbl">03</span>
+        <span class="ttl">Dor</span>
+      </div>
+    </div>
+
+    <div class="pgfoot">
+      <span>Introdução</span>
+      <span class="num">— 02 —</span>
+    </div>
+  </section>
+
+  <!-- ════════════════ PÁGINA 3 — CAP. 1 ════════════════ -->
+  <section class="page paper" aria-label="Capítulo 1">
+    <article class="chapter">
+      <span class="ch-bgnum" aria-hidden="true">01</span>
+      <span class="ch-tag">Capítulo Um</span>
+      <h2 class="ch-title">O Choro de Fome</h2>
+      <p class="ch-sub">Quando o estômago fala mais alto.</p>
+
+      <ul class="diag" aria-label="Sinais clínicos">
+        <li><b>Começa com movimentos de busca</b> — a boca do bebê abre e fecha, a cabeça vira para os lados.</li>
+        <li><b>Escala progressivamente</b> — começa calmo e aumenta.</li>
+        <li><b>Acontece em intervalos irregulares</b> nos primeiros dias — o recém-nascido não tem relógio biológico.</li>
+        <li><b>Acalma no peito</b> quando o bebê é colocado e consegue se prender com eficiência.</li>
+      </ul>
+
+      <div class="attn" role="note">
+        <span class="ico" aria-hidden="true">!</span>
+        <div>
+          <b>A regra das "3 em 3 horas"</b> nasceu da rotina hospitalar, não da biologia do recém-nascido. Ele pode mamar <b>até 35 vezes em 24h</b> nos primeiros dias.
+        </div>
+      </div>
+    </article>
+
+    <div class="pgfoot">
+      <span>Capítulo 01 · Fome</span>
+      <span class="num">— 03 —</span>
+    </div>
+  </section>
+
+  <!-- ════════════════ PÁGINA 4 — CAP. 2 ════════════════ -->
+  <section class="page cream" aria-label="Capítulo 2">
+    <article class="chapter laranja">
+      <span class="ch-bgnum" aria-hidden="true">02</span>
+      <span class="ch-tag">Capítulo Dois</span>
+      <h2 class="ch-title">O Choro de Conforto</h2>
+      <p class="ch-sub">Quando ele quer você, não leite.</p>
+
+      <p>O bebê humano nasce neurologicamente imaturo. Ele passa os primeiros três meses completando o desenvolvimento que não coube dentro do útero — a chamada <b>exterogestação</b>. O seu corpo é o ambiente regulador dele.</p>
+
+      <p>Quando ele mama no peito por conforto, não está com fome. Está usando a sucção para regular o sistema nervoso. <b>É biologia pura, não manha.</b></p>
+
+      <div class="compare" aria-label="Sucção nutritiva vs sucção de conforto">
+        <div class="cmp a">
+          <span class="tag">Padrão A</span>
+          <span class="ttl">Sucção Nutritiva</span>
+          <span class="pattern">suga <b>→</b> pausa <b>→</b> engole <b>→</b> repete</span>
+        </div>
+        <div class="cmp b">
+          <span class="tag">Padrão B</span>
+          <span class="ttl">Sucção de Conforto</span>
+          <span class="pattern">sucções rápidas e rasas, sem engolir; bebê adormece no peito</span>
+        </div>
+      </div>
+
+      <p class="relief">"Dar colo não acostuma mal.<br/>O colo organiza o sistema nervoso do recém-nascido."</p>
+    </article>
+
+    <div class="pgfoot">
+      <span>Capítulo 02 · Conforto</span>
+      <span class="num">— 04 —</span>
+    </div>
+  </section>
+
+  <!-- ════════════════ PÁGINA 5 — CAP. 3 ════════════════ -->
+  <section class="page paper" aria-label="Capítulo 3">
+    <article class="chapter agua">
+      <span class="ch-bgnum" aria-hidden="true">03</span>
+      <span class="ch-tag">Capítulo Três</span>
+      <h2 class="ch-title">O Choro de Dor</h2>
+      <p class="ch-sub">Quando algo precisa de atenção.</p>
+
+      <p>Este é o choro que mais apavora — e com razão. Mas saber reconhecê-lo tira o pânico e coloca <b>você no controle</b>.</p>
+
+      <div class="signs" aria-label="Sinais do choro de dor">
+        <div class="sign"><span class="dotr" aria-hidden="true"></span><span><b>Agudo</b>, de início súbito, sem escalada progressiva.</span></div>
+        <div class="sign"><span class="dotr" aria-hidden="true"></span><span>Corpo do bebê <b>tenso</b>, arqueado, pernas encolhidas.</span></div>
+        <div class="sign"><span class="dotr" aria-hidden="true"></span><span><b>Não acalma no peito</b> — ou piora depois de mamar.</span></div>
+        <div class="sign"><span class="dotr" aria-hidden="true"></span><span>Expressão facial de dor genuína: olhos semicerrados, testa franzida.</span></div>
+      </div>
+
+      <div class="note">
+        <span class="tag">Não confunda</span>
+        <h3 class="ttl">Isto não é dor — é disquesia.</h3>
+        <p>Bebê vermelho, se esforçando para fazer cocô? Isso não é dor de barriga. É <b>disquesia</b> — o bebê aprendendo a coordenar a musculatura. Se resolve sozinho em semanas.</p>
+      </div>
+
+      <div class="alert" role="alert">
+        <span class="bar" aria-hidden="true"></span>
+        <div>
+          Se o choro é <b>inconsolável</b>, há <b>vômito em jato</b> ou <b>sangue nas fezes</b> → procure o pediatra. Não é exagero. É leitura clínica.
+        </div>
+      </div>
+    </article>
+
+    <div class="pgfoot">
+      <span>Capítulo 03 · Dor</span>
+      <span class="num">— 05 —</span>
+    </div>
+  </section>
+
+  <!-- ════════════════ PÁGINA 6 — ENCERRAMENTO + CTA ════════════════ -->
+  <section class="closing" aria-label="Encerramento">
+    <div class="closing-top-fade" aria-hidden="true"></div>
+    <div class="closing-inner">
+      <span class="eyebrow">Encerramento<span class="dot"></span>Próximo passo</span>
+
+      <h2>Você já sabe<br/><em>ler o choro.</em></h2>
+
+      <p class="bridge">Este guia é o primeiro passo. No <strong>Método L.E.I.T.E.®</strong> completo, você aprende a lidar com peito empedrado, bebê que não pega, produção que cai, madrugadas sem dormir e o pós-parto real — com informação clínica, sem achismo.</p>
+
+      <div class="pillars" aria-label="Os 5 pilares do Método L.E.I.T.E.">
+        <div class="pillar">
+          <span class="ltr">L</span>
+          <div class="nm">Leitura do bebê</div>
+          <p class="desc">Decodificar choro, saltos de desenvolvimento e sinais de fome real.</p>
+        </div>
+        <div class="pillar">
+          <span class="ltr">E</span>
+          <div class="nm">Engrenagem do leite</div>
+          <p class="desc">Fisiologia real da produção láctea — fim do mito do leite fraco.</p>
+        </div>
+        <div class="pillar">
+          <span class="ltr">I</span>
+          <div class="nm">Intervenção em crises</div>
+          <p class="desc">O que fazer quando o caos se instala: peito empedrado, ingurgitamento, desespero.</p>
+        </div>
+        <div class="pillar">
+          <span class="ltr">T</span>
+          <div class="nm">Técnica de pega</div>
+          <p class="desc">Biomecânica real — posicionamento correto, sem dor.</p>
+        </div>
+        <div class="pillar full">
+          <span class="ltr">E</span>
+          <div class="nm">Equilíbrio e saúde mental</div>
+          <p class="desc">Puerpério, expectativa x realidade e o nascimento da nova mulher.</p>
+        </div>
+      </div>
+
+      <div class="price">
+        <span class="meta">Acesso vitalício · 12 aulas</span>
+        <div class="row">
+          <span class="val">R$ 94</span>
+          <span class="feats">
+            <span><em>·</em> pagamento único</span>
+            <span><em>·</em> acesso vitalício</span>
+          </span>
+        </div>
+      </div>
+
+      <a class="cta" href="https://www.amaterno.com.br/metodoleite" target="_blank" rel="noopener">
+        <span>Quero o Método L.E.I.T.E.® completo</span>
+        <span class="arrow" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <p class="guarantee">Pagamento seguro · Kiwify · Acesso imediato</p>
+
+      <div class="signoff">
+        <span class="sig">— Nathalia Caldeira</span>
+        <span class="who"><b>Enfermeira · 14 anos de experiência clínica</b><br/>Consultora em amamentação materno-infantil · Mãe de três.</span>
+      </div>
+
+      <div class="pgfoot" style="margin-top:32px">
+        <span>Método L.E.I.T.E.®</span>
+        <span class="num">— 06 —</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+</body>
+</html>
