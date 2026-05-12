@@ -11,23 +11,12 @@
   <meta property="og:description" content="Guia gratuito: a diferença real entre fome, conforto e dor no recém-nascido.">
   <meta property="og:type" content="website">
 
-  <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1268521454729888');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1268521454729888&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
+  <!-- =============================================
+  PIXEL DO FACEBOOK: cole o seu código aqui
+  ============================================= -->
+
+  <!-- Brevo Forms -->
+  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -769,6 +758,13 @@
       line-height: 1.7;
     }
 
+    /* ─── BREVO OVERRIDES ───────────────────────────── */
+    .brevo-wrapper .sib-form-message-panel { display: none; }
+    #sib-container, .sib-form, .sib-form-container { all: unset !important; }
+    .brevo-wrapper .input--hidden { display: none !important; }
+    .brevo-wrapper .entry__error { display: none; }
+    .brevo-wrapper form { display: block; }
+
     /* ─── ANIMATIONS ────────────────────────────────── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(18px); }
@@ -807,34 +803,29 @@
     </div>
   </div>
 
-  <div class="form-card" id="form-hero">
-    <div class="form-inner">
+  <div class="form-card brevo-wrapper" id="form-hero">
+    <form id="sib-form-hero" method="POST"
+      action="https://b7e266e2.sibforms.com/serve/MUIFACROqdWy8xvc_fe6hcmiua8a9ib_2gZMREb0TjiEbBgp09a_d0uxFC3_PdUVE8FyRV3QGr24baKlZwn3bMEQs-tOHMjgHHqdfAxejliCr1W3dHZf88OT78c-rmkv_kOU8LxsLevyjAzp9QniZT-MRIpaCCE6oEwBD2kioyRgqF2563OB-vwN5mo72E0n0NSGinOBqozRrkIlTQ=="
+      data-type="subscription">
       <p class="form-card-title">Quero o guia gratuito</p>
       <p class="form-card-sub">Acesso imediato. Sem spam.</p>
-
       <div class="form-group">
-        <label>Seu nome</label>
-        <input type="text" id="name-hero" placeholder="Como prefere ser chamada?" autocomplete="given-name">
+        <label for="NOME-hero">Seu nome</label>
+        <input class="input" type="text" id="NOME-hero" name="NOME" maxlength="200"
+          placeholder="Como prefere ser chamada?" autocomplete="given-name" data-required="true" required>
       </div>
       <div class="form-group">
-        <label>E-mail</label>
-        <input type="email" id="email-hero" placeholder="seu@email.com" autocomplete="email">
+        <label for="EMAIL-hero">E-mail</label>
+        <input class="input" type="email" id="EMAIL-hero" name="EMAIL"
+          placeholder="seu@email.com" autocomplete="email" data-required="true" required>
       </div>
-      <div class="form-group">
-        <label>WhatsApp</label>
-        <input type="tel" id="whatsapp-hero" placeholder="(99) 99999-9999" autocomplete="tel">
-      </div>
-      <button class="btn-submit" onclick="handleSubmit('hero')">
+      <button type="submit" class="btn-submit">
         Quero aprender a ler meu bebê →
       </button>
       <p class="privacy-note">🔒 Seus dados estão seguros. Não compartilhamos com ninguém.</p>
-    </div>
-
-    <div class="success-state" id="success-hero">
-      <div class="success-icon">✓</div>
-      <h4>Verifique o seu e-mail.</h4>
-      <p>O guia foi enviado para a sua caixa de entrada.<br>Se não aparecer em minutos, confira a pasta de spam.</p>
-    </div>
+      <input type="text" name="email_address_check" value="" class="input--hidden">
+      <input type="hidden" name="locale" value="pt">
+    </form>
   </div>
 
 </section>
@@ -1000,7 +991,17 @@
 
 
 <script>
-  /* ── Máscara WhatsApp ─────────────────────────────── */
+  window.REQUIRED_CODE_ERROR_MESSAGE = 'Escolha um código de país';
+  window.LOCALE = 'pt';
+  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Verifique o formato do campo e tente novamente.";
+  window.REQUIRED_ERROR_MESSAGE = "Este campo é obrigatório.";
+  window.GENERIC_INVALID_MESSAGE = "Verifique o formato do campo e tente novamente.";
+  window.INVALID_NUMBER = "Verifique o formato do campo e tente novamente.";
+  window.INVALID_DATE = "Insira uma data válida";
+  window.REQUIRED_MULTISELECT_MESSAGE = 'Selecione pelo menos 1 opção';
+  var AUTOHIDE = Boolean(1);
+
+  /* Máscara WhatsApp */
   document.querySelectorAll('input[type="tel"]').forEach(el => {
     el.addEventListener('input', function () {
       let v = this.value.replace(/\D/g, '').slice(0, 11);
@@ -1012,52 +1013,14 @@
     });
   });
 
-  /* ── Envio do formulário ──────────────────────────── */
-  function handleSubmit(formId) {
-    const name     = document.getElementById('name-'     + formId).value.trim();
-    const email    = document.getElementById('email-'    + formId).value.trim();
-    const whatsapp = document.getElementById('whatsapp-' + formId).value.trim();
-
-    const emailInput = document.getElementById('email-' + formId);
-    if (!email || !email.includes('@') || !email.includes('.')) {
-      emailInput.classList.add('error');
-      emailInput.focus();
-      emailInput.addEventListener('input', () => emailInput.classList.remove('error'), { once: true });
-      return;
-    }
-
-    const btn = document.querySelector('#form-' + formId + ' .btn-submit');
-    btn.textContent = 'Enviando...';
-    btn.disabled = true;
-
-    /* =====================================================
-       INTEGRAÇÃO KIWIFY
-       ─────────────────────────────────────────────────────
-       Substitua o setTimeout abaixo pela chamada real.
-       Opção 1 — Webhook Kiwify:
-         fetch('SEU_WEBHOOK_KIWIFY', {
-           method: 'POST',
-           headers: { 'Content-Type': 'application/json' },
-           body: JSON.stringify({ name, email, phone: whatsapp })
-         }).then(() => showSuccess(formId));
-
-       Opção 2 — Embed nativo da Kiwify:
-         Substitua todo o bloco .form-card pelo
-         código embed gerado na aba "Capturas" da Kiwify.
-    ===================================================== */
-
-    setTimeout(() => showSuccess(formId), 1200);
-  }
-
-  function showSuccess(formId) {
-    const card = document.getElementById('form-' + formId);
-    card.querySelector('.form-inner').style.display  = 'none';
-    document.getElementById('success-' + formId).style.display = 'block';
-
-    /* Pixel — dispara evento Lead quando o formulário é enviado */
-    if (typeof fbq !== 'undefined') fbq('track', 'Lead');
-  }
+  /* Pixel — dispara Lead no envio */
+  document.querySelectorAll('[data-type="subscription"]').forEach(form => {
+    form.addEventListener('submit', function() {
+      if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+    });
+  });
 </script>
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
 </body>
 </html>
