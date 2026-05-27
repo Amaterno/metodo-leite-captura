@@ -64,7 +64,7 @@
       padding: 48px 24px 60px;
       text-align: center;
       position: relative;
-      overflow: hidden;
+      overflow: visible;
     }
     .hero::before {
       content: '';
@@ -219,12 +219,13 @@
       box-shadow: 0 12px 40px rgba(0,0,0,0.13);
       position: relative;
       z-index: 2;
-      overflow: hidden;
+      height: auto;
     }
     .form-card iframe {
       display: block;
       width: 100%;
-      min-height: 380px;
+      height: 520px;
+      min-height: 520px;
       border: none;
       border-radius: 12px;
     }
@@ -703,10 +704,9 @@
 
   <div class="ebook-wrap">
     <div class="ebook-cover">
-      <div class="ebook-label">Guia Gratuito</div>
-      <div class="ebook-title">O Guia de<br>Sobrevivência<br>da Primeira<br>Semana</div>
-      <div class="ebook-divider"></div>
-      <div class="ebook-author">Nathalia Caldeira · Método L.E.I.T.E.®</div>
+      <img src="/capa-guia-primeira-semana.png"
+           alt="O Guia de Sobrevivência da Primeira Semana — Nathalia Caldeira"
+           style="width:100%; height:100%; object-fit:cover; border-radius:3px 8px 8px 3px; display:block; position:relative; z-index:1;">
     </div>
   </div>
 
